@@ -72,13 +72,15 @@ class ClickGUIScreen : Screen(Text.literal("Shadow Client GUI")) {
                 val bgColor = if (isHovered) Theme.accentHover else Theme.accentBg
                 context.fill(x, catY, x + sidebarWidth, catY + 22, bgColor)
                 context.fill(x, catY, x + 3, catY + 22, Theme.accent)
-                context.drawTextWithShadow(this.textRenderer, category.displayName, x + 15, catY + 7, Theme.accent)
+                context.drawTextWithShadow(this.textRenderer, category.icon, x + 12, catY + 7, Theme.accent)
+                context.drawTextWithShadow(this.textRenderer, category.displayName, x + 28, catY + 7, Theme.accent)
             } else {
                 val textColor = if (isHovered) Theme.text else Theme.textMuted
                 
                 if (isHovered) context.fill(x, catY, x + sidebarWidth, catY + 22, 0x1AFFFFFF.toInt())
                 
-                context.drawTextWithShadow(this.textRenderer, category.displayName, x + 15, catY + 7, textColor)
+                context.drawTextWithShadow(this.textRenderer, category.icon, x + 12, catY + 7, textColor)
+                context.drawTextWithShadow(this.textRenderer, category.displayName, x + 28, catY + 7, textColor)
             }
             catY += 26
         }
